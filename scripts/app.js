@@ -549,13 +549,13 @@ xhr0.send();
           code: 24
         },
         forecast: [
-          {code: 44, high: 26, low: 10},
-          {code: 44, high: 24, low: 13},
-          {code: 4, high: 25, low: 18},
-          {code: 24, high: 25, low: 19},
-          {code: 24, high: 29, low: 17},
-          {code: 44, high: 22, low: 19},
-          {code: 44, high: 29, low: 17}
+          {code: 44, high: 2, low: 0},
+          {code: 44, high: 1, low: -3},
+          {code: 4, high: 5, low: 1},
+          {code: 24, high: 4, low: 1},
+          {code: 24, high: 2, low: 1},
+          {code: 44, high: 3, low: -1},
+          {code: 44, high: 2, low: -2}
         ]
       },
       atmosphere: {
