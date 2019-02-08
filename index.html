@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
+ 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <title>Clean.Air.Cluj</title>
+  <meta name="description" content="Air Quality Awareness App">
+  <meta name="author" content="Dhyan Or">
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
   <link rel="manifest" href="/manifest.json">
-  
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Favicons-->
+  <link rel="shortcut icon" href="favicon.ico">  
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Clean Air Cluj">
@@ -22,29 +31,51 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-49535404-3');
   </script>
-  	
+  <script>
+  function show(shown, hidden) {
+    document.getElementById(shown).style.display='inline';
+    document.getElementById(hidden).style.display='none';
+    return false;
+  }
+  function showhide(shown) {
+	ele=document.getElementById(shown);
+	if (ele.style.display=='inline') {ele.style.display='none'} else (ele.style.display='inline');
+    return false;
+  }
+  </script>	
 </head>
-<body>
+<body id="home">
 
   <header class="header">
     <h1 class="header__title">Clean.Air.Cluj</h1>
     <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
     <button id="butAdd" class="headerButton" aria-label="Add"></button>
+	<button id="butRemove" class="headerButton" aria-label="Remove"></button>
+	<!--<h1><a href="">Nav</a></h1>-->
+	<a class="to_nav" href="#" onclick="return showhide('primary_nav');">&#9776;</a>
   </header>
 
+  <nav id="primary_nav" >
+      <ul>
+          <li><a href="#" onclick="return show('air','info');">Air</a></li>
+          <li><a href="#" onclick="return show('info','air');">Info</a></li>
+          <!--<li><a href="#contact">Contact</a></li>-->
+          <!-- <li><a href="#home">Top</a></li> -->
+      </ul>
+  </nav>  
+
+ <div id="air">
   <main class="main">
     <div class="card cardTemplate weather-forecast" hidden>
       <div class="city-key" hidden></div>
-      <div class="card-last-updated" hidden></div>
-      <div class="location"></div>
+      <div class="card-last-updated" hidden></div>	 
+	  <div class="location"></div>
       <div class="date"></div>
-      <div class="description"></div>
+      <div class="description"></div>  
       <div class="current">
         <div class="visual">
-          
           
           <div class="aqi">
             <span class="value"></span><br><span class="airscale">&nbsp;&nbsp;&nbsp;&nbsp;ppm</span>
@@ -56,8 +87,7 @@
             <span class="value"></span><span class="scale">°C</span>
           </div>
 	  	  -->
-		  
-           
+		   
         </div>
         
 		<div class="description">
@@ -150,14 +180,15 @@
       </div>
     </div>
   </main>
-
+ </div>
+ 
   <div class="dialog-container">
     <div class="dialog">
       <div class="dialog-title">Add new location</div>
       <div class="dialog-body">
         <select id="selectCityToAdd">
           <!-- Where On Earth Identifiers (WOEIDs). https://developer.yahoo.com/weather/documentation.html#req -->
-          <option value="869897">Cluj-Napoca: Centru</option>
+          <option value="869897">Centru</option>
           <option value="872277">Mărăşti</option>
           <option value="866288">Old Town</option>
           <option value="866544">Gheorgheni</option>
@@ -172,6 +203,13 @@
       </div>
     </div>
   </div>
+
+    <div id="info" class="card">
+	<br><br><br>
+	Clean Air Cluj helps you see what you breathe.<br><br> We are collecting data from monitoring stations across the city, analyzing pollution levels, and displaying them in a meaningful way based on your specific location.<br> 
+  <!-- Clean Air Cluj makes air quality information accessible and relevant.<br><br>While taking information from monitoring stations across town, measuring levels of CO, CO<sub>2</sub>, NO<sub>x</sub>, SO<sub>x</sub>, O<sub>3</sub>, PM<sub>2.5</sub>, PM<sub>10</sub> and other pollutants, Clean Air Cluj makes sure the air quality data is meaningful to the public.<br><br>By making it easier to understand, and by showing air quality in your specific location, Clean Air Cluj helps residents know what they are dealing with, what consequences pollution has in their daily lives, and how to avoid them and improve the quality of air we breathe.<br> -->   
+  <!-- <footer><a name="contact">Copyright &copy;2018 Dhyan Or</a></footer> -->
+    </div>
 
   <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">

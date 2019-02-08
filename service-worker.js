@@ -10,6 +10,7 @@ var filesToCache = [
   '/images/cloudy-scattered-showers.png',
   '/images/cloudy.png',
   '/images/fog.png',
+  '/images/ic_remove_white_24px.svg',	
   '/images/ic_add_white_24px.svg',
   '/images/ic_refresh_white_24px.svg',
   '/images/partly-cloudy.png',
