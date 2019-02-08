@@ -29,6 +29,24 @@
     app.toggleAddDialog(true);
   });
 
+  document.getElementById('butRemove').addEventListener('click', function() {
+    // Remove last card
+	//app.visibleCards = {};
+    //app.selectedCities = [];
+	//app.updateForecastCard(initialWeatherForecast);
+	//app.updateForecasts();
+    app.updateForecastCard(initialWeatherForecast);
+    app.selectedCities = [
+      {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
+    ];
+    app.saveSelectedCities();
+	window.location.reload();
+	//card.classList.remove('cardTemplate');
+    //app.container.removeChild(app.container.childNodes[0]);
+    //app.visibleCards.removeChild(card);
+	//app.selectedCities.pop();
+  });
+  
   document.getElementById('butAddCity').addEventListener('click', function() {
       // Add the newly selected city
       var select = document.getElementById('selectCityToAdd');
@@ -534,28 +552,28 @@ xhr0.send();
    */
   var initialWeatherForecast = {
     key: '869897',
-    label: 'Cluj-Napoca: Centru',
-    created: '2019-02-14T13:00:00Z',
+    label: 'Centru',
+    created: '2018-05-11T11:00:00Z',
     channel: {
       astronomy: {
-        sunrise: "7:32 am",
-        sunset: "5:48 pm"
+        sunrise: "5:43 am",
+        sunset: "8:21 pm"
       },
       item: {
         condition: {
           text: "Windy",
-          date: "Thu, 14 Feb 2019 11:00 PM EDT",
+          date: "Fri, 11 May 2018 09:00 PM EDT",
           temp: 26,
           code: 24
         },
         forecast: [
-          {code: 44, high: 2, low: 0},
-          {code: 44, high: 1, low: -3},
-          {code: 4, high: 5, low: 1},
-          {code: 24, high: 4, low: 1},
-          {code: 24, high: 2, low: 1},
-          {code: 44, high: 3, low: -1},
-          {code: 44, high: 2, low: -2}
+          {code: 44, high: 26, low: 10},
+          {code: 44, high: 24, low: 13},
+          {code: 4, high: 25, low: 18},
+          {code: 24, high: 25, low: 19},
+          {code: 24, high: 29, low: 17},
+          {code: 44, high: 22, low: 19},
+          {code: 44, high: 29, low: 17}
         ]
       },
       atmosphere: {
