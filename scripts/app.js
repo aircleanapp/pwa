@@ -150,11 +150,13 @@ if ('caches' in window) {
      });
    }
 */
-   		  
-var xhr0 = new XMLHttpRequest();
+   
+app.populateAir([10,2,40],card);   
+if (1==2) {   		  
 //xhr1.open('GET', 'https://api.beebotte.com/v1/data/read/RaspberryPi/mq135?limit=1&source=raw&time-range=1hour', false);
-xhr0.open('GET', 'https://api-cleanaircluj.herokuapp.com/api/Resources?filter[order]=timespan%20DESC&filter[limit]=1', true);//true=async
 //xhr1.setRequestHeader("Authorization", "2eab27596ecc0428cb1086e9f335cfc5:zArjGkSHLj8bzcwLHtmdBmT3y2A=");
+var xhr0 = new XMLHttpRequest();
+xhr0.open('GET', 'https://api-cleanaircluj.herokuapp.com/api/Resources?filter[order]=timespan%20DESC&filter[limit]=1', true);//true=async
 xhr0.setRequestHeader("Accept","application/json");
 xhr0.addEventListener('load',function(){ console.log('xhr0:status='+xhr0.status+' response='+xhr0.responseText);
   if(xhr0.status === 200){
@@ -218,7 +220,7 @@ xhr0.addEventListener('load',function(){ console.log('xhr0:status='+xhr0.status+
   }
 },false) 
 xhr0.send();
-
+}
 //	var xhr1 = new XMLHttpRequest();
 	//xhr1.open('GET', 'https://api.beebotte.com/v1/data/read/RaspberryPi/mq135?limit=1&source=raw&time-range=1hour', false);
 //	xhr1.open('GET', 'https://api.beebotte.com/v1/data/read/RaspberryPi/mq135?limit=1&source=raw&time-range=12hour', false);
@@ -362,9 +364,9 @@ xhr0.send();
    ****************************************************************************/
 
   app.populateAir = function (res0,card) {
-    var gas = Math.round(res0.co2);
-  	var temp = Math.round(res0.temperature);
-  	var hum = Math.round(res0.humidity/10);	
+    var gas = res0[0];//Math.round(res0.co2);
+  	var temp = res0[1];//Math.round(res0.temperature);
+  	var hum = res0[2];//Math.round(res0.humidity/10);	
 	var gascol = "green";
 	var gastext = "Normal";
 	var gasfont = gas+100;
@@ -553,27 +555,27 @@ xhr0.send();
   var initialWeatherForecast = {
     key: '869897',
     label: 'Centru',
-    created: '2018-05-11T11:00:00Z',
+    created: '2019-02-08T06:00:00Z',
     channel: {
       astronomy: {
-        sunrise: "5:43 am",
-        sunset: "8:21 pm"
+        sunrise: "7:43 am",
+        sunset: "5:21 pm"
       },
       item: {
         condition: {
           text: "Windy",
-          date: "Fri, 11 May 2018 09:00 PM EDT",
-          temp: 26,
+          date: "Fri, 8 Feb 2019 02:40 PM EET",
+          temp: 6,
           code: 24
         },
         forecast: [
-          {code: 44, high: 26, low: 10},
-          {code: 44, high: 24, low: 13},
-          {code: 4, high: 25, low: 18},
-          {code: 24, high: 25, low: 19},
-          {code: 24, high: 29, low: 17},
-          {code: 44, high: 22, low: 19},
-          {code: 44, high: 29, low: 17}
+          {code: 44, high: 2, low: 1},
+          {code: 44, high: 1, low: -3},
+          {code: 4, high: 5, low: 2},
+          {code: 24, high: 2, low: -1},
+          {code: 24, high: 0, low: -3},
+          {code: 44, high: 2, low: -2},
+          {code: 44, high: 4, low: 0}
         ]
       },
       atmosphere: {
@@ -592,7 +594,7 @@ xhr0.send();
     }
   };
   // TODO uncomment line below to test app with fake data
-  // app.updateForecastCard(initialWeatherForecast);
+  //app.updateForecastCard(initialWeatherForecast);
 
   app.selectedCities = localStorage.selectedCities;
     if (app.selectedCities) {
