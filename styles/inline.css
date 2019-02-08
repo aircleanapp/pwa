@@ -109,11 +109,11 @@ body {
     outline: none;
     cursor: pointer; }
   .header #butRefresh {
-    background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
+    background: url(../images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
-    background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
+    background: url(../images/ic_add_white_24px.svg) center center no-repeat; }
   .header #butRemove {
-    background: url(/images/ic_remove_white_24px.svg) center center no-repeat; }
+    background: url(../images/ic_remove_white_24px.svg) center center no-repeat; }
 
 .header__title {
   font-weight: 400;
@@ -339,39 +339,39 @@ body {
   border-radius: 40px;
 }
   .weather-forecast .icon.clear-day {
-    background-image: url("/images/clear.png") !important; }
+    background-image: url("../images/clear.png") !important; }
   .weather-forecast .icon.clear-night {
-    background-image: url("/images/clear.png") !important; }
+    background-image: url("../images/clear.png") !important; }
   .weather-forecast .icon.rain {
-    background-image: url("/images/rain.png") !important; }
+    background-image: url("../images/rain.png") !important; }
   .weather-forecast .icon.snow {
-    background-image: url("/images/snow.png") !important; }
+    background-image: url("../images/snow.png") !important; }
   .weather-forecast .icon.sleet {
-    background-image: url("/images/sleet.png") !important; }
+    background-image: url("../images/sleet.png") !important; }
   .weather-forecast .icon.windy {
-    background-image: url("/images/wind.png") !important; }
+    background-image: url("../images/wind.png") !important; }
   .weather-forecast .icon.fog {
-    background-image: url("/images/fog.png") !important; }
+    background-image: url("../images/fog.png") !important; }
   .weather-forecast .icon.cloudy {
-    background-image: url("/images/cloudy.png") !important; }
+    background-image: url("../images/cloudy.png") !important; }
   .weather-forecast .icon.partly-cloudy-day {
-    background-image: url("/images/partly-cloudy.png") !important; }
+    background-image: url("../images/partly-cloudy.png") !important; }
   .weather-forecast .icon.partly-cloudy-night {
-    background-image: url("/images/partly-cloudy.png") !important; }
+    background-image: url("../images/partly-cloudy.png") !important; }
   .weather-forecast .icon.thunderstorms {
-    background-image: url("/images/thunderstorm.png") !important; }
+    background-image: url("../images/thunderstorm.png") !important; }
 
 
     .weather-forecast .icon.air-normal {
-      background-image: url("/images/air-normal.png") !important; }
+      background-image: url("../images/air-normal.png") !important; }
     .weather-forecast .icon.air-fair {
-      background-image: url("/images/air-fair.png") !important; }
+      background-image: url("../images/air-fair.png") !important; }
     .weather-forecast .icon.air-moderate {
-      background-image: url("/images/air-moderate.png") !important; }
+      background-image: url("../images/air-moderate.png") !important; }
     .weather-forecast .icon.air-poor {
-      background-image: url("/images/air-poor.png") !important; }
+      background-image: url("../images/air-poor.png") !important; }
     .weather-forecast .icon.air-bad {
-      background-image: url("/images/air-bad.png") !important; }
+      background-image: url("../images/air-bad.png") !important; }
 
 @media (max-width: 450px) {
   .weather-forecast .date, .weather-forecast .description {
